@@ -1,0 +1,224 @@
+header {
+    padding: 10px 0;
+    background-color: rgba(242, 242, 242, 0.8);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(70, 70, 70, 0.1);
+    width: 100%;
+  }
+  
+  .logo img {
+    cursor: pointer;
+    max-height: 80px;
+  }
+  
+  .menu ul {
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .menu ul li {
+    list-style: none;
+    display: inline-block;
+    color: rgb(110, 110, 110);
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 8px;
+    margin-left: 25px;
+  }
+  
+  .menu ul li:hover {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+  }
+  
+  /* Search */
+  form {
+    position: relative;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+    border: 4px solid rgb(180, 180, 180, 0.5);
+  }
+  
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 0.8em;
+    border-radius: 20px;
+    padding: 0 20px;
+  }
+  
+  input::placeholder {
+    color: rgb(180, 180, 180, 0.8);
+  }
+  
+  .fa {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: rgb(180, 180, 180);
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+  }
+  
+  form:hover {
+    width: 220px;
+    cursor: pointer;
+    border: 4px solid rgb(180, 180, 180);
+  }
+  
+  form:hover input {
+    display: block;
+  }
+  
+  form:hover .fa {
+    color: rgb(218, 218, 218, 0.5);
+    background-color: #fff;
+  }
+  
+  /* Cart */
+  .cart {
+    position: relative;
+    right: 15%;
+    cursor: pointer;
+    top: 0px;
+    font-size: 24px;
+    color: rgb(110, 110, 110);
+  }
+  
+  .cart:hover {
+    color: rgb(0, 0, 0);
+  }
+  
+  .cart_value {
+    position: relative;
+    background: rgb(110, 110, 110);
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    padding: 2px 9px 4px 6px;
+    font-weight: 500;
+    font-size: 14px;
+    bottom: 2px;
+    left: -2px;
+  }
+  
+  @media only screen and (max-width: 998px) {
+    .menu {
+      position: absolute;
+      background-color: rgba(242, 242, 242, 0.8);
+      top: -300px;
+      right: 0px;
+      width: 280px;
+      height: 100%;
+      transition: 0.4s ease-in-out;
+    }
+
+    .menuToggle {
+      position: absolute;
+      right: 0px;
+      top: 100px;
+      transition: 0.4s ease-in-out;
+    }
+
+    .menu ul li {
+      display: block;
+      background-color: rgba(242, 242, 242, 0.8);
+      text-align: left;
+      margin: 0;
+      padding: 10px 0 0 10px;
+      border-bottom: 1px solid rgba(70, 70, 70, 0.3);
+    }
+  
+    .menu-icon {
+      display: inline-block;
+      position: relative;
+      right: 0;
+      top: 20px;
+    }
+  
+    .menu-icon span {
+      display: block;
+      width: 32px;
+      height: 3px;
+      background-color: rgb(110, 110, 110);
+      border-radius: 5px;
+      transition: 0.2s ease-in-out;
+    }
+  
+    .menu-icon span:nth-child(2) {
+      margin: 4px 0;
+    }
+  
+    .menu-icon-x span:nth-child(1) {
+      transform: rotate(405deg);
+      margin-top: -10px;
+    }
+  
+    .menu-icon-x span:nth-child(2) {
+      top: -10px;
+      transform: rotate(-405deg);
+      margin-top: -4px;
+    }
+  
+    .menu-icon-x span:nth-child(3) {
+      top: -10px;
+      transform: rotate(405deg);
+      margin-top: -6px;
+    }
+  
+  
+    form {
+      top: 20px;
+      left: 125px;
+      width: 240px;
+    }
+  
+    form:hover {
+      width: 240px;
+      left: 125px;
+    }
+  
+    .cart {
+      left: 20px;
+      top: -5px;
+      width: 120px;
+    }
+  
+    .cart:hover {
+      color: rgb(0, 0, 0);
+    }
+  
+    .cart::before {
+      position: inherit;
+      content: "Cart";
+      right: 18px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  

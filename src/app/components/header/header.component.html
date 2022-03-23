@@ -1,0 +1,42 @@
+<header> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-3">
+                <div class="logo">
+                    <img src="../../../assets/FragranceShop LOGO.png" alt="LOGO FRAGRANCE SHOP" routerLink="/home">
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 col-9 text-end">
+                <div class="menu-icon" [class.menu-icon-x]="menuX" (click)="menuToggle()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu" [class.menuToggle]="menuVariable">
+                    <ul>
+                        <li *ngIf="_router.url == '/products'">
+                            <form action="" >
+                                <input type="text" class="form-control" [(ngModel)]="searchTerm" [ngModelOptions]="{standalone: true}"
+                                    (keyup)="searchItem($event)" placeholder="Find your favorite...">
+                                <i class="fa fa-search"></i>
+                            </form>
+                        </li>
+                        <li routerLink="/home">Home</li>
+                        <li routerLink="/products">Products</li>
+                        <li>About</li>
+                        <li>Contact</li>
+                        <li routerLink="/cart">
+                            <div class="cart">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="cart_value">
+                                    {{cartItem}}
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>

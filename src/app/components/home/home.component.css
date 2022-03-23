@@ -1,0 +1,23 @@
+.shop {
+    background-color: #cc8421;
+    border: #fff;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.shop:hover {
+    color: #fff;
+    background: #9e671b;
+    text-shadow: #FFF 0px 0px 2px, #FFF 0px 0px 5px, #FFF 0px 0px 8px, #cc8421 0px 0px 10px, #cc8421 0px 0px 15px, #cc8421 0px 0px 20px, #cc8421 0px 0px 25px, #cc8421 0px 0px 40px, 2px 2px 8px rgba(206,89,55,0);
+}
+
+h2 {
+    color: #cc8421;
+}
+
+h3 {
+    position: relative;
+    color: #fff;
+    -webkit-text-stroke: 0.4px rgb(10, 88, 170);
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #cc8421 0px 0px 20px, #cc8421 0px 0px 30px, #cc8421 0px 0px 40px, #cc8421 0px 0px 50px, #cc8421 0px 0px 75px, 2px 2px 8px rgba(206,89,55,0);
+}

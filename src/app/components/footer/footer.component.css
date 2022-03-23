@@ -1,0 +1,25 @@
+footer {
+    bottom: 0;
+    width:100%;
+}
+
+h5, strong, .social {
+    color: #cc8421;
+    transition: 0.3s ease-in-out;
+}
+
+h5:hover, strong:hover, .social:hover {
+    color: #fff;
+    text-shadow: 0px 1px 11px rgba(204,132,33,0.91);
+    transition: 0.3s ease-in-out;
+}
+
+.social {
+    font-size: 24px;
+}
+
+.contact {
+    margin-left: 30px;
+    margin-right: 10px;
+}
+

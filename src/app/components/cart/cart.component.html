@@ -1,0 +1,136 @@
+<section class="cart_section">
+    <div class="container">
+        <div *ngIf="total === 0">
+            <div class="empty">
+                <h1>Your cart is empty</h1>
+                <button class="btn-primary" routerLink="/home">ADD ITEMS TO YOUR CART</button>
+            </div>
+        </div>
+        <div *ngIf="total">
+            <h2>Cart</h2>
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Sub Total</th>
+                    <th>Remove Item</th>
+                <tr *ngFor="let cartProduct of getCartDetails">
+                    <td style="text-align: left;">{{cartProduct.alt}}</td>
+                    <td><img src="{{cartProduct.img}}" alt="{{cartProduct.alt}}"></td>
+                    <td>{{cartProduct.amount}}Lei</td>
+                    <td>
+                        <button type="button" class="btn" (click)="incQnt(cartProduct.prodId, cartProduct.quantity)"><i
+                                class="fa-solid fa-plus"></i></button>
+                        <span>{{cartProduct.quantity}}</span>
+                        <button type="button" class="btn" (click)="decQnt(cartProduct.prodId, cartProduct.quantity)"><i
+                                class="fa-solid fa-minus"></i></button>
+                    </td>
+                    <td>{{cartProduct.quantity*cartProduct.amount}}Lei</td>
+                    <td><button style="background: transparent;" type="button" class="btn btn-danger remove"
+                            (click)="removeItem(cartProduct)"><i class="fa-solid fa-trash-can"></i></button></td>
+                </tr>
+            </table>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="total">Total: {{total}}Lei</h2>
+                </div>
+                <div class="col-md-6 text-right">
+                    <button type="button" class="checkout btn-success" (click)="checkoutBox()"><i style="color: white;"
+                            class="fa-solid fa-credit-card"> </i> CHECKOUT</button>
+                    <button type="button" class="removeall btn-danger" (click)="removeAll()"><i style="color: white;"
+                            class="fa-solid fa-trash-can"></i> Remove All Items</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="checkout-form" [ngClass]="{'checkout-form-visible': checkOut === true}">
+    <h6 style="margin-bottom: 30px; cursor: pointer;"><i class="fa-solid fa-circle-chevron-left" (click)="goBack()"></i> Go back</h6>
+    <form>
+        <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Email" required>
+            <input type="checkbox" class="form-check-input" id="subscribe">
+            <label class="form-check-label" for="exampleCheck1">Email me with news and offers</label>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <input type="text" class="form-control" id="company" placeholder="Company (optional)">
+                <br>
+                <input type="text" class="form-control" id="address" placeholder="Address" required>
+                <br>
+                <input type="text" class="form-control" id="address-line2"
+                    placeholder="Apartment, suite, etc. (optional)">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Postal code">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="City">
+            </div>
+            <div class="col">
+                <select id="inputState" class="form-control">
+                    <option selected>Country</option>
+                    <option>Romania</option>
+                    <option>Moldova</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="text" class="form-control" id="phone" placeholder="Phone">
+        </div>
+        <div class="row">
+            <div class="col">
+                
+                <legend class="col-form-label pt-10">Delivery Options</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="delivery" id="delivery1" value="option1"
+                        checked>
+                    <label class="form-check-label" for="delivery1">
+                        Pick up in store
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="delivery" id="delivery2" value="option2">
+                    <label class="form-check-label" for="delivery2">
+                        Get it delivered (Free)
+                    </label>
+                </div>
+
+            </div>
+            <div class="col">
+                <legend class="col-form-label pt-10">Payment Options</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="payment" id="payment1" value="option1"
+                        checked>
+                    <label class="form-check-label" for="payment1">
+                        Cash on delivery
+                    </label>
+                </div>
+                <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="payment " id="payment2" value="option2" disabled>
+                    <label class="form-check-label" for="payment2">
+                        Debit card (Temporarily unavailable)
+                    </label>
+                  </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit " class="btn-submit btn-success" routerLink="/thank-you" (click)="submitCheckout()">Submit</button>
+        </div>
+    </form>
+</div>

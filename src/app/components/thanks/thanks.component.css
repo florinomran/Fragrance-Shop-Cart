@@ -1,0 +1,24 @@
+.thankYou {
+    margin-top: 20px;
+    border: 1px solid rgba(70, 70, 70, 0.1);
+}
+
+i {
+    position: relative;
+    left: 5px;
+    cursor: pointer;
+}
+
+p {
+    margin: 20px;
+}
+
+h3 {
+    position: relative;
+    margin: 0 auto;
+    color: #fff;
+    top: -8rem;
+    -webkit-text-stroke: 0.4px #cc8421;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, rgb(10, 88, 170) 0px 0px 20px, rgb(10, 88, 170)
+     0px 0px 30px, rgb(10, 88, 170) 0px 0px 40px, rgb(10, 88, 170) 0px 0px 50px, rgb(10, 88, 170) 0px 0px 75px, 2px 2px 8px #cc8421;
+}

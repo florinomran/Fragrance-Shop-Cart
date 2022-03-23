@@ -1,0 +1,27 @@
+<section class="product">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-11 categories">
+                <ul>
+                    <li (click)="filterCateg('niche')">Niche Fragrances</li>
+                    <li (click)="filterCateg('designer')">Designer Fragrances</li>
+                    <li (click)="filterTS()">Top Sellers</li>
+                </ul>
+            </div>
+            <div class="col-md-3" *ngFor="let product of filerCategory | filter:searchKey:'alt'">
+                <div class="box" [ngClass]="{topSeller: product.topSeller == true}">
+                    <div class="product_image">
+                        <img src="{{product.img}}" alt="{{product.alt}}">
+                    </div>
+                    <div class="content">
+                        <h4>{{product.amount}}Lei</h4>
+                        <button type="button" class="btn" (click)="inc(product)"><i class="fa-solid fa-plus"></i></button>
+                        <span>{{product.quantity}}</span>
+                        <button type="button" class="btn" (click)="dec(product)"><i class="fa-solid fa-minus"></i></button>
+                    </div>
+                    <button type="button" class="cart_btn" (click)="addToCart(product)">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

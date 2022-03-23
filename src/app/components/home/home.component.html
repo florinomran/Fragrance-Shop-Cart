@@ -1,0 +1,44 @@
+<header>
+  <div class="container-md my-3">
+    <ngb-carousel class="my-5" *ngIf="images">
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[0]" class="img-fluid" alt="Random first slide">
+        </div>
+        <div class="carousel-caption">
+          <h3 class="my-5">Discover your signature scent</h3>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[1]" class="img-fluid" alt="Random second slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>Or build a collection</h3>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[2]" class="img-fluid" alt="Random third slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>Wear it because it complements you, <br>
+            Not for compliments.</h3>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[3]" class="img-fluid" alt="Random first slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>Start your fragrance journey here</h3>
+          
+        </div>
+      </ng-template>
+    </ngb-carousel>
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-primary shop" routerLink="/products">Shop now</button>
+    </div>
+    </div>
+
+</header>
